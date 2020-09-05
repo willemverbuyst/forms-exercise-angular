@@ -9,21 +9,15 @@
         class="form-control"
         [(ngModel)]="userSettings.name"
         required
-        #propertyTest="ngModel"
-        #classTest
+        #nameField="ngModel"
       />
+      <div
+        [hidden]="nameField.valid || nameField.untouched"
+        class="alert alert-danger"
+      >
+        Enter a name
+      </div>
     </div>
-
-    <p>####################</p>
-    <p>dirty: {{ propertyTest.dirty }}</p>
-    <p>dirty: {{ propertyTest.pristine }}</p>
-    <p>dirty: {{ propertyTest.touched }}</p>
-    <p>dirty: {{ propertyTest.untouched }}</p>
-    <p>dirty: {{ propertyTest.valid }}</p>
-    <p>dirty: {{ propertyTest.invalid }}</p>
-    <p>####################</p>
-    <p>{{ classTest.className }}</p>
-    <p>####################</p>
 
     <div class="form-check form-group">
       <input
